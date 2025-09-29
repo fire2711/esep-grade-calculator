@@ -99,7 +99,7 @@ func TestGradeTypeString(t *testing.T) {
 
 func TestGetFail(t *testing.T) {
 	gradeCalculator := NewGradeCalculator()
-	gradeCalculator.scheme = "pass/fail"
+	gradeCalculator.scheme = "pass or fail"
 
 	gradeCalculator.AddGrade("assignment1", 30, Assignment)
 	gradeCalculator.AddGrade("exam1", 20, Exam)
@@ -115,7 +115,7 @@ func TestGetFail(t *testing.T) {
 
 func TestGetPass(t *testing.T) {
 	gradeCalculator := NewGradeCalculator()
-	gradeCalculator.scheme = "pass/fail"
+	gradeCalculator.scheme = "pass or fail"
 
 	gradeCalculator.AddGrade("assignment1", 80, Assignment)
 	gradeCalculator.AddGrade("exam1", 70, Exam)
