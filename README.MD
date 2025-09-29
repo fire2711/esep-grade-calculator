@@ -5,6 +5,8 @@ This package provides a Grade Calcualtor for calculating weighted final scores b
 Runtime requirements:
 Golang 1.24+
 
+Ensure Golang is installed and in PATH
+
 Usage:
 Input student scores through the AddGrade function 
 Calculate using calculateNumericalGrade()
