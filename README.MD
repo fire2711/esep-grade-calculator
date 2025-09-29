@@ -1,9 +1,14 @@
 # ESEP Grade Calculator
 
-This library is a simple utility to calculate your grades.
+This package provides a Grade Calcualtor for calculating weighted final scores based on assignments, exams, and essays and outputting as a letter grade.
 
 Runtime requirements:
 Golang 1.24+
+
+Usage:
+Input student scores through the AddGrade function 
+Calculate using calculateNumericalGrade()
+Get letter grade using GetFinalGrade()
 
 Run unit tests:
 ```
