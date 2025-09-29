@@ -96,3 +96,35 @@ func TestGradeTypeString(t *testing.T) {
 		t.Errorf("Expected Essay.String() to return 'essay'; got '%s'", Essay.String())
 	}
 }
+
+func TestGetFail(t *testing.T) {
+	gradeCalculator := NewGradeCalculator()
+	gradeCalculator.scheme = "pass/fail"
+
+	gradeCalculator.AddGrade("assignment1", 30, Assignment)
+	gradeCalculator.AddGrade("exam1", 20, Exam)
+	gradeCalculator.AddGrade("essay1", 35, Essay)
+
+	expected := "Fail"
+	actual := gradeCalculator.GetFinalGrade()
+
+	if expected != actual {
+		t.Errorf("Expected '%s', got '%s'", expected, actual)
+	}
+}
+
+func TestGetPass(t *testing.T) {
+	gradeCalculator := NewGradeCalculator()
+	gradeCalculator.scheme = "pass/fail"
+
+	gradeCalculator.AddGrade("assignment1", 80, Assignment)
+	gradeCalculator.AddGrade("exam1", 70, Exam)
+	gradeCalculator.AddGrade("essay1", 100, Essay)
+
+	expected := "Pass"
+	actual := gradeCalculator.GetFinalGrade()
+
+	if expected != actual {
+		t.Errorf("Expected '%s', got '%s'", expected, actual)
+	}
+}
